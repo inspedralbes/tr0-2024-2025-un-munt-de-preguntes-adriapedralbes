@@ -313,6 +313,7 @@ function cargarPanelAdmin() {
         .catch(error => console.error('Error:', error));
 }
 
+// Asegúrate de llamar a esta función después de un inicio de sesión exitoso
 function handleAdminLogin(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -324,7 +325,7 @@ function handleAdminLogin(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            cargarDashboardAdmin();
+            actualizarPanelAdmin();
         } else {
             Swal.fire('Error', data.message, 'error');
         }
@@ -386,18 +387,17 @@ function listarPreguntes() {
 function mostrarFormularioAgregarPregunta() {
     const html = `
         <h3>Afegir Nova Pregunta</h3>
-        <form id="form-agregar-pregunta">
+        <form id="form-agregar-pregunta" enctype="multipart/form-data">
             <input type="text" name="pregunta" placeholder="Pregunta" required>
-            <input type="text" name="resposta1" placeholder="Resposta 1" required>
-            <input type="text" name="resposta2" placeholder="Resposta 2" required>
-            <input type="text" name="resposta3" placeholder="Resposta 3" required>
-            <input type="text" name="resposta4" placeholder="Resposta 4" required>
-            <select name="correcta">
-                <option value="0">Resposta 1 correcta</option>
-                <option value="1">Resposta 2 correcta</option>
-                <option value="2">Resposta 3 correcta</option>
-                <option value="3">Resposta 4 correcta</option>
-            </select>
+            <div id="respuestas-container">
+                ${[1, 2, 3, 4].map(i => `
+                    <div>
+                        <input type="text" name="resposta${i}" placeholder="Resposta ${i}" required>
+                        <input type="file" name="imatge${i}" accept="image/*">
+                        <input type="radio" name="correcta" value="${i-1}" required> Correcta
+                    </div>
+                `).join('')}
+            </div>
             <button type="submit">Afegir Pregunta</button>
         </form>
     `;
@@ -416,12 +416,15 @@ function agregarPregunta(e) {
     .then(data => {
         if (data.success) {
             Swal.fire('Èxit', 'Pregunta afegida correctament', 'success');
-            listarPreguntes();
+            listarPreguntes(); // Actualizar la lista de preguntas
         } else {
             Swal.fire('Error', data.message, 'error');
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        Swal.fire('Error', 'Hi ha hagut un error en afegir la pregunta', 'error');
+    });
 }
 
 function editarPregunta(id) {
@@ -519,3 +522,43 @@ function eliminarPregunta(id) {
     });
 }
 
+function actualizarPanelAdmin() {
+    const adminPanel = document.getElementById('admin-panel');
+    
+    // Crear el contenido del panel de administración
+    const panelContent = `
+        <h2>Panel d'Administració</h2>
+        <nav>
+            <ul>
+                <li><button onclick="listarPreguntes()">Llistar Preguntes</button></li>
+                <li><button onclick="mostrarFormularioAgregarPregunta()">Afegir Nova Pregunta</button></li>
+            </ul>
+        </nav>
+        <div id="contenido-admin"></div>
+    `;
+    
+    // Actualizar el contenido del panel
+    adminPanel.innerHTML = panelContent;
+    
+    // Mostrar el panel de administración y ocultar otros elementos
+    adminPanel.style.display = 'block';
+    document.getElementById('pagina-inicial').style.display = 'none';
+    document.getElementById('joc').style.display = 'none';
+    
+    // Cargar la lista de preguntas por defecto
+    listarPreguntes();
+}
+
+// Función para volver a la página inicial desde el panel de administración
+function volverAInicio() {
+    document.getElementById('admin-panel').style.display = 'none';
+    document.getElementById('pagina-inicial').style.display = 'block';
+}
+
+// No olvides agregar esta función a tu botón de "Volver" en el panel de administración
+function agregarBotonVolver() {
+    const botonVolver = document.createElement('button');
+    botonVolver.textContent = 'Tornar a l\'inici';
+    botonVolver.onclick = volverAInicio;
+    document.getElementById('admin-panel').appendChild(botonVolver);
+}
