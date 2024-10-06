@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Marques de Cotxes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div id="pagina-inicial" class="contenidor">
+        <h1>Quiz Marques de Cotxes</h1>
+        <input type="text" id="nom-usuari" placeholder="El teu nom">
+        <input type="number" id="num-preguntes" min="1" max="10" value="10" placeholder="Número de preguntes">
+        <button id="iniciar-joc">Iniciar</button>
+        <button id="admin-login">Accés Administrador</button>
+    </div>
+
+    <div id="joc" style="display: none;">
+        <h1 id="mostrar-usuari">Benvingut Usuari</h1>
+        <h2>Pregunta <span id="pregunta-actual">1</span> de <span id="preguntes-totals">10</span></h2>
+        <div id="pregunta"></div>
+        <div id="respostes"></div>
+        <div id="navegacio-preguntes">
+            <button id="pregunta-anterior">Anterior</button>
+            <button id="pregunta-seguent">Següent</button>
+        </div>
+        <div id="temps">Temps: <span id="contador">00:00</span></div>
+        <button id="veure-resultats">Veure Resultats</button>
+        <div id="estat-partida" style="display: none;"></div>
+        <h3>Estat de la partida</h3>
+        <div id="resum-respostes"></div>
+    </div>
+
+    <div id="resultat-final" style="display: none;">
+        <h2>Resultat Final</h2>
+        <div id="resultat">
+            <span id="correctes">0</span>/<span id="total-preguntes">10</span>
+        </div>
+        <button id="tornar-inici">Tornar al inici</button>
+    </div>
+
+    <div id="admin-panel" style="display: none;"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
