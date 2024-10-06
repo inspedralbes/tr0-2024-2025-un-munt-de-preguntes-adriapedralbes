@@ -1,0 +1,604 @@
+{
+    "preguntes": [
+      {
+        "id": 1,
+        "pregunta": "Quina marca de cotxes utilitza el lema 'Ultimate Driving Machine'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Mercedes-Benz",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Mercedes.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Audi",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Audi.png"
+          },
+          {
+            "id": 3,
+            "resposta": "BMW",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Lexus",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Lexus.png"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "pregunta": "Quina marca té un logotip amb un cavall rampant?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Porsche",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Porsche.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Ferrari",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Ferrari.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Lamborghini",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Lamborghini.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Ford",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Ford.png"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "pregunta": "Quina marca és coneguda pel seu logotip amb un toro?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Lamborghini",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Lamborghini.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Bugatti",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Bugatti.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Maserati",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Volvo.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Ferrari",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Ferrari.png"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "pregunta": "Quina marca de cotxes és coneguda pel model '911'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Audi",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Audi.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Mercedes-Benz",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Porsche",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Porsche.png"
+          },
+          {
+            "id": 4,
+            "resposta": "BMW",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "pregunta": "Quina marca té com a símbol quatre anells entrellaçats?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Opel",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Opel.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Volkswagen",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Volkswagen.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Audi",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Audi.png"
+          },
+          {
+            "id": 4,
+            "resposta": "BMW",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "pregunta": "Quina marca va crear el famós model 'Mustang'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Ford",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Ford.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Chevrolet",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Chevrolet.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Dodge",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Dodge.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Tesla",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Tesla.png"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "pregunta": "Quina marca és famosa pel model híbrid 'Prius'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Toyota",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Toyota.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Honda",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Honda.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Nissan",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Nissan.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Ford",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Ford.png"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "pregunta": "Quina marca té el model 'Golf' com un dels més populars?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Volkswagen",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Volkswagen.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Seat",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Seat.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Renault",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Renault.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Opel",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Opel.png"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "pregunta": "Quina marca utilitza una estrella de tres puntes com a logotip?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Mercedes-Benz",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Mercedes.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Audi",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Audi.png"
+          },
+          {
+            "id": 3,
+            "resposta": "BMW",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Volkswagen",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Volkswagen.png"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "pregunta": "Quina marca de cotxes de luxe utilitza el model 'Phantom'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Rolls-Royce",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Rolls-Royce.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Bentley",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Bentley.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Aston Martin",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Aston-Martin.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Maserati",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Maserati.png"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "pregunta": "Quina marca de cotxes va crear el model 'Beetle'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Volkswagen",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Volkswagen.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Ford",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Ford.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Chevrolet",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Chevrolet.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Fiat",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Fiat.png"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "pregunta": "Quina marca de cotxes té un logotip amb quatre anells?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Audi",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Audi.png"
+          },
+          {
+            "id": 2,
+            "resposta": "BMW",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Mercedes-Benz",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Lexus",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Lexus.png"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "pregunta": "Quina marca de cotxes produeix el model 'Civic'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "Honda",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/Honda.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Toyota",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Toyota.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Nissan",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Nissan.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Mazda",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Mazda.png"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "pregunta": "Quina marca de cotxes és coneguda pel seu logo 'propeller'?",
+        "respostes": [
+          {
+            "id": 1,
+            "resposta": "BMW",
+            "correcta": true,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          },
+          {
+            "id": 2,
+            "resposta": "Audi",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Audi.png"
+          },
+          {
+            "id": 3,
+            "resposta": "Mercedes-Benz",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/BMW.png"
+          },
+          {
+            "id": 4,
+            "resposta": "Volvo",
+            "correcta": false,
+            "imatge": "http://localhost/decero/front/img/Volvo.png"
+          }
+        ]
+      },
+        {
+          "id": 15,
+          "pregunta": "Quina marca de cotxes produeix el model 'F-150'?",
+          "respostes": [
+            {
+              "id": 1,
+              "resposta": "Ford",
+              "correcta": true,
+              "imatge": "http://localhost/decero/front/img/Ford.png"
+            },
+            {
+              "id": 2,
+              "resposta": "Chevrolet",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Chevrolet.png"
+            },
+            {
+              "id": 3,
+              "resposta": "Dodge",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Dodge.png"
+            },
+            {
+              "id": 4,
+              "resposta": "Toyota",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/BMW.png"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "pregunta": "Quina marca de cotxes té un trident al seu logo?",
+          "respostes": [
+            {
+              "id": 1,
+              "resposta": "Maserati",
+              "correcta": true,
+              "imatge": "http://localhost/decero/front/img/Maserati.png"
+            },
+            {
+              "id": 2,
+              "resposta": "Ferrari",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Ferrari.png"
+            },
+            {
+              "id": 3,
+              "resposta": "Alfa Romeo",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Alfa-Romeo.png"
+            },
+            {
+              "id": 4,
+              "resposta": "Lamborghini",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Lamborghini.png"
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "pregunta": "Quina marca de cotxes va crear el model 'Model S'?",
+          "respostes": [
+            {
+              "id": 1,
+              "resposta": "Tesla",
+              "correcta": true,
+              "imatge": "http://localhost/decero/front/img/Tesla.png"
+            },
+            {
+              "id": 2,
+              "resposta": "BMW",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/BMW.png"
+            },
+            {
+              "id": 3,
+              "resposta": "Audi",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Audi.png"
+            },
+            {
+              "id": 4,
+              "resposta": "Mercedes-Benz",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Mercedes.png"
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "pregunta": "Quina marca de cotxes produeix el model 'Outback'?",
+          "respostes": [
+            {
+              "id": 1,
+              "resposta": "Subaru",
+              "correcta": true,
+              "imatge": "http://localhost/decero/front/img/Subaru.png"
+            },
+            {
+              "id": 2,
+              "resposta": "Volvo",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Volvo.png"
+            },
+            {
+              "id": 3,
+              "resposta": "Jeep",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Jeep.png"
+            },
+            {
+              "id": 4,
+              "resposta": "Land Rover",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Land-Rover.png"
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "pregunta": "Quina marca de cotxes té un logo amb un lleó?",
+          "respostes": [
+            {
+              "id": 1,
+              "resposta": "Peugeot",
+              "correcta": true,
+              "imatge": "http://localhost/decero/front/img/Peugeot.png"
+            },
+            {
+              "id": 2,
+              "resposta": "Renault",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Renault.png"
+            },
+            {
+              "id": 3,
+              "resposta": "Citroën",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Citroen.png"
+            },
+            {
+              "id": 4,
+              "resposta": "Fiat",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Fiat.png"
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "pregunta": "Quina marca de cotxes produeix el model 'Accord'?",
+          "respostes": [
+            {
+              "id": 1,
+              "resposta": "Honda",
+              "correcta": true,
+              "imatge": "http://localhost/decero/front/img/Honda.png"
+            },
+            {
+              "id": 2,
+              "resposta": "Toyota",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Toyota.png"
+            },
+            {
+              "id": 3,
+              "resposta": "Nissan",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Nissan.png"
+            },
+            {
+              "id": 4,
+              "resposta": "Mazda",
+              "correcta": false,
+              "imatge": "http://localhost/decero/front/img/Mazda.png"
+            }
+          ]
+        }
+      ]
+    }
