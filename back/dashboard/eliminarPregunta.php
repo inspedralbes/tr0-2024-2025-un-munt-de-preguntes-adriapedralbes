@@ -36,7 +36,7 @@ try {
 
     // Eliminar las imágenes físicamente
     foreach ($imatges as $imatge) {
-        $ruta_imatge = str_replace("http://localhost/decero/front/img/", "../../front/img/", $imatge['imatge']);
+        $ruta_imatge = str_replace("../front/img/", "../../front/img/", $imatge['imatge']);
         if (file_exists($ruta_imatge)) {
             unlink($ruta_imatge);
         }
