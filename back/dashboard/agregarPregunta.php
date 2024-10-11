@@ -44,7 +44,7 @@ try {
             $target_file = $target_dir . $new_filename;
             
             if (move_uploaded_file($_FILES["imatge".($i+1)]["tmp_name"], $target_file)) {
-                $imatge_url = "http://localhost/decero/front/img/" . $new_filename;
+                $imatge_url = "../front/img/" . $new_filename;
             } else {
                 throw new Exception("Error al pujar la imatge de la resposta " . ($i+1));
             }
