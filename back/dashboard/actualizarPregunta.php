@@ -58,7 +58,7 @@ try {
             }
             
             if (move_uploaded_file($_FILES["imatge$i"]["tmp_name"], $target_file)) {
-                $image_url = "http://localhost/decero/front/img/" . $new_filename;
+                $image_url = "../front/img/" . $new_filename;
                 $sql_update_image = "UPDATE respostes SET imatge = ? WHERE id = ?";
                 $stmt_image = $conn->prepare($sql_update_image);
                 $stmt_image->bind_param("si", $image_url, $resposta_id);
