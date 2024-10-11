@@ -17,7 +17,7 @@ function guardarNomUsuari(nomUsuari) {
 }
 
 function obtenirPreguntes(numPreguntes) {
-    fetch(`http://localhost/decero/back/getPreguntes.php?num_preguntes=${numPreguntes}`)
+    fetch(`../back/getPreguntes.php?num_preguntes=${numPreguntes}`)
       .then(resposta => resposta.json())
       .then(dades => {
         preguntesQuiz = dades;
@@ -73,7 +73,7 @@ function seleccionarResposta(indexResposta) {
     pregunta.respostaSeleccionada = indexResposta;
     
     // Enviar la respuesta al servidor
-    fetch('http://localhost/decero/back/guardarResposta.php', {
+    fetch('../back/guardarResposta.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -122,7 +122,7 @@ function iniciarJoc() {
 
 function iniciarJocDespuesDeMigracion(numPreguntes, nomUsuari) {
     // El resto de tu código para iniciar el juego...
-    fetch('http://localhost/decero/back/iniciarQuiz.php', {
+    fetch('../back/iniciarQuiz.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -261,7 +261,7 @@ function mostrarResultats() {
     tornarIniciButton.addEventListener("click", tornarInici);
 
     // Llamar a finalitza.php para obtener los resultados
-    fetch('http://localhost/decero/back/finalitza.php')
+    fetch('../back/finalitza.php')
     .then(response => response.json())
     .then(data => {
         if (data.success) {
