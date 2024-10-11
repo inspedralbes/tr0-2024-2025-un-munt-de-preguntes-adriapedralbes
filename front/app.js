@@ -16,6 +16,19 @@ function guardarNomUsuari(nomUsuari) {
     localStorage.setItem("nomUsuari", nomUsuari);
 }
 
+function mostrarInterfaceJoc() {
+    const divJoc = document.getElementById("joc");
+    const divPaginaInicial = document.getElementById("pagina-inicial");
+    let mostrarUsuari = document.getElementById("mostrar-usuari");
+    
+    mostrarUsuari.innerHTML = `Benvingut usuari: ${localStorage.getItem("nomUsuari")}`;
+    reiniciarCronometro();
+
+    divJoc.style.display = "block";
+    divPaginaInicial.style.display = "none";
+    veureResultatsButton.style.display = "none";
+}
+
 function obtenirPreguntes(numPreguntes) {
     fetch(`../back/getPreguntes.php?num_preguntes=${numPreguntes}`)
       .then(resposta => resposta.json())
@@ -24,9 +37,11 @@ function obtenirPreguntes(numPreguntes) {
         indexPreguntaActual = 0;
         mostrarPregunta();
         actualitzarNavegacio();
+        mostrarInterfaceJoc();
       })
       .catch(error => {
         console.error('Error:', error);
+        alert("Hi ha hagut un error en obtenir les preguntes. Si us plau, torna-ho a provar.");
       });
 }
 
@@ -98,23 +113,28 @@ function iniciarJoc() {
     let nomUsuari = document.getElementById("nom-usuari").value;
 
     if (numPreguntes && nomUsuari) {
-        // Primero, ejecutar la migración
-        fetch('/decero/back/runMigration.php')
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    console.log('Migración completada:', data.message);
-                    // Continuar con el inicio del juego
-                    iniciarJocDespuesDeMigracion(numPreguntes, nomUsuari);
-                } else {
-                    console.error('Error en la migración:', data.message);
-                    alert("Hi ha hagut un error en preparar el joc. Si us plau, torna-ho a provar.");
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Hi ha hagut un error en preparar el joc. Si us plau, torna-ho a provar.");
-            });
+        // Iniciar el quiz y obtener las preguntas
+        fetch('../back/iniciarQuiz.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `num_preguntes=${numPreguntes}&nom_usuari=${encodeURIComponent(nomUsuari)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Quiz iniciat correctament');
+                obtenirPreguntes(numPreguntes);
+            } else {
+                console.error('Error al iniciar el quiz:', data.message);
+                alert("Hi ha hagut un error en iniciar el joc. Si us plau, torna-ho a provar.");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("Hi ha hagut un error en iniciar el joc. Si us plau, torna-ho a provar.");
+        });
     } else {
         alert("Has d'introduir el nombre de preguntes i el nom d'usuari");
     }
@@ -427,6 +447,8 @@ function agregarPregunta(e) {
     });
 }
 
+
+
 function editarPregunta(id) {
     fetch(`/decero/back/dashboard/getPregunta.php?id=${id}`)
         .then(response => response.json())
@@ -443,7 +465,14 @@ function editarPregunta(id) {
         });
 }
 
+/*
+La función mostrarFormularioEditarPregunta toma un parámetro pregunta, que es un objeto que contiene 
+la información de la pregunta a editar.
 
+El formulario incluye un campo oculto para el ID de la pregunta y un campo de texto para la pregunta en sí.
+Luego, se itera sobre las respuestas de la pregunta usando pregunta.respostes.forEach():
+
+*/
 function mostrarFormularioEditarPregunta(pregunta) {
     let html = `
         <h3>Editar Pregunta</h3>
@@ -470,8 +499,12 @@ function mostrarFormularioEditarPregunta(pregunta) {
     document.getElementById('form-editar-pregunta').addEventListener('submit', actualizarPregunta);
 }
 
+
+
 function actualizarPregunta(e) {
+    //Evita recargar la pagina al enviar el formulario
     e.preventDefault();
+    //Crea un objeto FormData con todos los datos del formulario.
     const formData = new FormData(e.target);
     fetch('/decero/back/dashboard/actualizarPregunta.php', {
         method: 'POST',
@@ -525,7 +558,7 @@ function eliminarPregunta(id) {
 function actualizarPanelAdmin() {
     const adminPanel = document.getElementById('admin-panel');
     
-    // Crear el contenido del panel de administración
+    // Panel de administración
     const panelContent = `
         <h2>Panel d'Administració</h2>
         <nav>
@@ -545,17 +578,16 @@ function actualizarPanelAdmin() {
     document.getElementById('pagina-inicial').style.display = 'none';
     document.getElementById('joc').style.display = 'none';
     
-    // Cargar la lista de preguntas por defecto
     listarPreguntes();
 }
 
-// Función para volver a la página inicial desde el panel de administración
+// Volver a la página inicial desde el panel de administración
 function volverAInicio() {
     document.getElementById('admin-panel').style.display = 'none';
     document.getElementById('pagina-inicial').style.display = 'block';
 }
 
-// No olvides agregar esta función a tu botón de "Volver" en el panel de administración
+// Botón de "Volver" en el panel de administración
 function agregarBotonVolver() {
     const botonVolver = document.createElement('button');
     botonVolver.textContent = 'Tornar a l\'inici';
